@@ -1,4 +1,4 @@
-# Máster en Ciencia de Datos e Ingeniería de Computadores. Prácticas de BigData y Cloud Computing. Curso 2016-2017. 
+# Máster en Ciencia de Datos e Ingeniería de Computadores. Prácticas de BigData y Cloud Computing. Curso 2017-2018. 
 
 ![Header](https://sites.google.com/site/manuparra/home/headerdicits.png)
 
@@ -13,35 +13,35 @@ Manuel J. Parra Royón (manuelparra@decsai.ugr.es) & José. M. Benítez Sánchez
 Table of Contents
 =================
 
-   * [What is docker?](#what-is-docker)
-      * [What is the difference between Docker and Virtual Machines?](#what-is-the-difference-between-docker-and-virtual-machines)
-         * [VIRTUAL MACHINES](#virtual-machines)
-         * [Containers](#containers)
-      * [Advantages of Docker](#advantages-of-docker)
-   * [Starting with docker](#starting-with-docker)
-   * [First container](#first-container)
-      * [Docker Market or Docker Hub](#docker-market-or-docker-hub)
-      * [Creating a RStudio Data Science service](#creating-a-rstudio-data-science-service)
-         * [Status of your containers](#status-of-your-containers)
-         * [Example using RStudio Service with RSNNS](#example-using-rstudio-service-with-rsnns)
-      * [ADVANCED: A simple web server with NGINX](#advanced-a-simple-web-server-with-nginx)
-         * [Status of your containers](#status-of-your-containers-1)
-         * [Enter in the nginx container:](#enter-in-the-nginx-container)
-         * [Docker ports redirection](#docker-ports-redirection)
-   * [ Review of docker commands](#review-of-docker-commands)
-      * [Show docker Images](#show-docker-images)
-      * [List of launched/running docker containers:](#list-of-launchedrunning-docker-containers)
-      * [Download a image of docker container:](#download-a-image-of-docker-container)
-      * [Run a container](#run-a-container)
-      * [Stop a container](#stop-a-container)
-      * [Restarting a container](#restarting-a-container)
-      * [Deleting a container or shutdown a container](#deleting-a-container-or-shutdown-a-container)
-      * [Execute commands inside running container:](#execute-commands-inside-running-container)
-      * [Upload image to docker::hub](#upload-image-to-dockerhub)
-      * [Statistics of a container](#statistics-of-a-container)
-      * [Logs of a container](#logs-of-a-container)
-   * [Basic exercise with containers:](#basic-exercise-with-containers)
-   * [References and more information](#references-and-more-information)
+- [What is docker?](#what-is-docker-)
+  * [What is the difference between Docker and Virtual Machines?](#what-is-the-difference-between-docker-and-virtual-machines-)
+    + [VIRTUAL MACHINES](#virtual-machines)
+    + [Containers](#containers)
+  * [Advantages of Docker](#advantages-of-docker)
+- [Starting with docker](#starting-with-docker)
+- [First container](#first-container)
+  * [Docker Market or Docker Hub](#docker-market-or-docker-hub)
+  * [Creating a RStudio Data Science service](#creating-a-rstudio-data-science-service)
+    + [Status of your containers](#status-of-your-containers)
+    + [Example using RStudio Service with RSNNS](#example-using-rstudio-service-with-rsnns)
+  * [ADVANCED: A simple web server with NGINX](#advanced--a-simple-web-server-with-nginx)
+    + [Status of your containers](#status-of-your-containers-1)
+    + [Enter in the nginx container:](#enter-in-the-nginx-container-)
+    + [Docker ports redirection](#docker-ports-redirection)
+- [Review of docker commands](#review-of-docker-commands)
+  * [Show docker Images](#show-docker-images)
+  * [List of launched/running docker containers:](#list-of-launched-running-docker-containers-)
+  * [Download a image of docker container:](#download-a-image-of-docker-container-)
+  * [Run a container](#run-a-container)
+  * [Stop a container](#stop-a-container)
+  * [Restarting a container](#restarting-a-container)
+  * [Deleting a container or shutdown a container](#deleting-a-container-or-shutdown-a-container)
+  * [Execute commands inside running container:](#execute-commands-inside-running-container-)
+  * [Upload image to docker::hub](#upload-image-to-docker--hub)
+  * [Statistics of a container](#statistics-of-a-container)
+  * [Logs of a container](#logs-of-a-container)
+- [Basic exercise with containers:](#basic-exercise-with-containers-)
+- [References and more information](#references-and-more-information)
 
 
 # What is docker?
@@ -90,7 +90,7 @@ Containers include the application and all of its dependencies, but **share the 
 
 - Docker makes it easy to identify issues, isolate the problem container, quickly roll back to make the necessary changes, and then push the updated container into production. Isolation between containers makes these changes less disruptive than in traditional software models.
 
-- Docker Swarm !
+- Docker Swarm ! (Kubernetes)
 
 **Multiplataform**
 
@@ -101,20 +101,18 @@ Containers include the application and all of its dependencies, but **share the 
 
 # Starting with docker
 
-Log and connect to our hadoop cluster system with:
-Firstly try to access to the hadoop ugr server:
+Log and connect to our betatun cluster system with:
+Firstly try to access to the betatun ugr server:
 
 ```
-ssh manuparra@hadoop....
+ssh manuparra@betatun....
 ```
 
 Change `manuparra` with your `user login`: 
 
 ```
-ssh mdatXXXXXXX@hadoop....
+ssh CD_XXXXXXX@betatun....
 ```
-
-If you don't kwnow your login, go to [Login](./README.md)
 
 Use your previously changed password, when asked.
 
@@ -146,7 +144,7 @@ But you can also build your own container with everything you need. For example 
 
 ## Creating a RStudio Data Science service
 
-The first thing we need is to download the docker image from RStudio (on docker hub is: rocker), for them we check whether or not the image is in the list of available images:
+The first thing we need is to download the docker image from RStudio (on docker hub is: **rocker**), for them we check whether or not the image is in the list of available images:
 
 
 ```
@@ -195,7 +193,7 @@ About the options:
 
 So, before execute the next command we need:
 
-- One of your EXTERNAL PORT assigned (Look [here](README.md#dockerports))
+- One of your EXTERNAL PORT assigned (see your file ``puertosdocker.txt``)
 - Rstudio INTERNAL PORT (default: 8787)
 - The name of your "RStudio service"
 
@@ -205,7 +203,7 @@ So, before execute the next command we need:
 docker run -d -p <yourassignedport>:8787 --name test_rstudio rocker/rstudio
 ```
 
-In ``<yourassignedport>`` write your individually assigned port. See your ports [here](README.md#dockerports).
+In ``<yourassignedport>`` write your individually assigned port.
 
 To check if your container is runnig, show the status of all your container:
 
@@ -244,7 +242,7 @@ Where ``container ID`` is the unique ID of your Container. You can use Container
 And now, go to your browser and write:
 
 ```
-http://hadoop.ugr.es:<yourassignedport>/
+http://betatun.ugr.es:<yourassignedport>/
 ```
 
 Use default credentials to login Your Rstudio service: 
@@ -401,7 +399,7 @@ Where ``container ID`` is the unique ID of your Container. You can use Container
 And now, go to your browser and write:
 
 ```
-http://hadoop.ugr.es:<yourport>/
+http://betatun.ugr.es:<yourport>/
 ```
 
 ![nginxDocker](https://sites.google.com/site/manuparra/home/docker_nginx.png)
