@@ -35,7 +35,7 @@ The working environment consists of the following structure for each user:
    - docker cluster  (15 nodes)
    - hadoop cluster  (15 nodes)
 
-- betatum.ugr.es
+- betatun.ugr.es
    - Max 5 ports for docker containers.
 
 - docker cluster provides for each user:
@@ -55,7 +55,7 @@ Do you use Windows? Please install SSH Putty.
 Do you use Linux or Mac? Fine!, nothing to do: use a Terminal (shell)
 
 
-### Log in betatum ugr server with your credentials
+### Log in betatun ugr server with your credentials
 
 ```
 ssh manuparra@betatun...
