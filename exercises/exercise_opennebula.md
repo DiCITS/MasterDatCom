@@ -36,3 +36,53 @@ yum install R -y
 
 Install inside R your favorite packages.
 
+
+## Create a Web Service 
+
+In one of your VM, install :
+
+A) WebServer:
+
+```
+sudo yum install httpd
+sudo systemctl start httpd.service
+sudo systemctl enable httpd.service
+```
+
+B) PHP:
+
+```
+sudo yum install php php-mysql
+sudo systemctl restart httpd.service
+```
+
+Exit of the VM and create another VM (your mate's VM) for MySQL Server (MariaSQL)
+
+
+## Create a MySQL (DataBase) service
+
+In one of your VM (mate), install :
+
+```
+sudo yum install mariadb-server mariadb
+sudo systemctl start mariadb
+```
+
+Configure MySQL Database Service:
+
+```
+sudo mysql_secure_installation
+```
+
+Enable Service:
+
+```
+sudo systemctl enable mariadb.service
+```
+
+## Create full service
+
+Connect WebServer VirtualMachine with MySQL DataBase Service 
+
+
+
