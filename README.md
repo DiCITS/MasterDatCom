@@ -129,9 +129,10 @@ cat puertosdocker.txt
 
 Go to: [First steps with Docker Containers](./starting_docker.md)
 
-# Starting with OPENNEBULA
+# Starting with OpenNebula and OpenStack
 
-Go to: [First steps with OpenStack]()
+Go to: [First steps with OpenNebula](./starting_opennebula.md)
+Go to: [First steps with OpenStack](./starting_openstack.md)
 
 # Starting with HDFS
 
