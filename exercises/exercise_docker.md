@@ -10,7 +10,7 @@ Manuel J. Parra Royón (manuelparra@decsai.ugr.es) &  José. M. Benítez Sánche
 # Exercise with Docker
 
 
-## Create LDAP client application in PHP
+## Create WebService and modify landing page.
 
 Go to ``betatun.ugr.es``.
 
