@@ -52,7 +52,7 @@ Write the next:
 
 And open your browser with the next URL:
 
-```http://betatun:15XXX/```
+```http://betatun.ugr.es:15XXX/```
 
 *Remember: use your Port Assignment  ``cat puertosdocker.txt``*
 
