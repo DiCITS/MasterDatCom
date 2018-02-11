@@ -145,14 +145,9 @@ Go to: [Exercise with OpenNebula and OpenStack](./exercises/exercise_opennebula.
 
 # Starting with HDFS
 
-Go to: [First steps with HDFS]()
+Go to: [First steps with HDFS](./starting_hdfs.md)
 
 # Starting with Hadoop
 
-Go to: [First steps with Hadoop]()
-
-# Starting with SparkR (spanish)
-
-Go to: [First steps with SparkR]()
-
+Go to: [First steps with Hadoop](./starting_hadoop.md)
 
